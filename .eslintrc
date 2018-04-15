@@ -1,0 +1,17 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module"
+    },
+    "env": {
+        "commonjs": true,
+        "node": true
+    },
+    "rules": {
+        "valid-jsdoc": ["error", {
+            "requireParamDescription": false,
+            "requireReturnDescription": false
+        }]
+    }
+}

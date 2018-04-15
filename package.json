@@ -1,0 +1,28 @@
+{
+  "name": "estel-estree-builder",
+  "version": "0.1.0",
+  "description": "ESTree compatible AST builder",
+  "main": "generated/es2018.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-grammar": "jison generator/grammar.jison -o generator/grammar.js",
+    "generate": "node generator/index.js",
+    "prepublish": "npm run generate -- es5 && npm run generate -- es2015 && npm run generate -- es2018"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smelukov/estree-ast-builder"
+  },
+  "author": {
+    "name": "Sergey Melyukov",
+    "email": "s.melukov@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "jison": "^0.4.18"
+  },
+  "files": [
+    "generated"
+  ]
+}
