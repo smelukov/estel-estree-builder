@@ -5,9 +5,10 @@
   "main": "generated/es2018.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint generator",
     "build-grammar": "jison generator/grammar.jison -o generator/grammar.js",
     "generate": "node generator/index.js",
-    "prepublish": "npm run generate -- es5 && npm run generate -- es2015 && npm run generate -- es2018"
+    "prepublish": "npm run lint && npm run generate -- es5 && npm run generate -- es2015 && npm run generate -- es2018"
   },
   "repository": {
     "type": "git",
