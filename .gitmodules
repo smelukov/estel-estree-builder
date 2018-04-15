@@ -1,0 +1,4 @@
+[submodule "estree"]
+	path = estree
+	url = git@github.com:estree/estree.git
+	branch = master

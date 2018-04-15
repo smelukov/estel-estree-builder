@@ -2,7 +2,6 @@
 .DS_Store
 .idea/
 .vscode/
-.gitmodules
 node_modules/
 estree/
 generated/
