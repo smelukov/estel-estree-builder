@@ -72,38 +72,4 @@ function typedef(nodeType, params, extendList) {
     ];
 }
 
-function method(params, returnValue) {
-    function stringify(param) {
-        let name = param.safeName || param.name;
-        let type = stringifyType(param.type);
-
-        if (!param.required) {
-            if (param.defaultValue !== undefined) {
-                name += '=' + param.defaultValue;
-            }
-
-            name = `[${name}]`;
-        }
-
-        return { name, type };
-    }
-
-    const items = [];
-
-    for (const param of params) {
-        if (param.alias || param.type.kind === 'literal' || param.name === 'type' && param.type.kind === 'literal') {
-            continue;
-        }
-
-        items.push(stringify(param));
-    }
-
-    return [
-        '/**',
-        ...items.map(prop => ` * @param {${prop.type}} ${prop.safeName || prop.name}`),
-        ` * @return {${returnValue}}`,
-        ' */'
-    ];
-}
-
-module.exports = { typedef, enumerator, method, stringifyType };
+module.exports = { typedef, enumerator, stringifyType };

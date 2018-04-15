@@ -72,9 +72,8 @@ function createMethodDescriptor(nodeType, name, resolvedParams) {
             return `${name}: ${tsDef.stringifyType(param.type)}${param.defaultValue !== undefined ? ' = ' + String(param.defaultValue) : ''}`;
         });
     const code = generateMethodCode(resolvedParams);
-    const jsDoc = tsDef.method(resolvedParams, nodeType);
 
-    return { name, params, code, jsDoc };
+    return { name, params, code };
 }
 
 function generateMethodCode(fields) {
