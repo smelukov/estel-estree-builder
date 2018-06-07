@@ -35,13 +35,13 @@ function stringifyType(type) {
 
 function enumerator(nodeType, values) {
     return [
-        `type ${nodeType} = ${values.map(value => `"${value}"`).join('|')};`
+        `export type ${nodeType} = ${values.map(value => `"${value}"`).join('|')};`
     ];
 }
 
 function typedef(nodeType, params, extendList) {
     return [
-        `interface ${nodeType}${extendList && extendList.length ? ' extends ' + extendList.join(', ') : ''} {`,
+        `export interface ${nodeType}${extendList && extendList.length ? ' extends ' + extendList.join(', ') : ''} {`,
         ...addIndent(params.map(prop => {
             if (prop.type.kind === 'literal') {
                 return `${prop.name}: ${typeof prop.type.value},`;
