@@ -8,7 +8,7 @@
     "lint": "eslint generator",
     "build-grammar": "jison generator/grammar.jison -o generator/grammar.js",
     "generate": "node generator/index.js",
-    "prepublish": "npm run lint && npm run generate -- -es es5 es2015 es2018"
+    "prepublish": "npm run lint && npm run build-grammar && npm run generate -- -es es5 es2015 es2018"
   },
   "repository": {
     "type": "git",
