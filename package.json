@@ -1,6 +1,6 @@
 {
   "name": "estel-estree-builder",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ESTree compatible AST builder",
   "main": "generated/es2018.js",
   "scripts": {
